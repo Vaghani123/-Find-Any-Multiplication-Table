@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <title>Session 40</title>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Lobster+Two:wght@400;700&family=Quicksand:wght@300&display=swap');
+            *{
+                font-family: 'Lobster Two', cursive;
+            }
+
+            body{
+                background: linear-gradient(#de30de,rgb(234, 81, 106),orange);
+                color:white;   
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Multipication Calculator</h1>
+        <h2>11/04/22</h2>
+        <input id="number" type="text" placeholder="Enter Number">
+        *
+        <input id="multiple" type="text" placeholder="Enter The Multiple"><br><br>
+        <tr>
+            <button class="btn" onclick="MULTIPLY()">Multiply</button>
+        </tr>
+        <h4 id="display"></h4>
+    </body>
+    <script>
+        function MULTIPLY(){
+            var number = document.getElementById("number").value;
+            var multiple = document.getElementById("multiple").value;
+            var display = document.getElementById("display");
+            display.innerText = (number * multiple);
+
+            var count = 1;
+
+            while(count<=multiple){
+                var product = number*count;
+                var element = document.createElement("h4")
+                element.innerText = number + "x"+ count + "="+ product;
+                document.body.append(element)
+                count = count + 1;
+            }  
+        }
+    </script> 
+</html>
